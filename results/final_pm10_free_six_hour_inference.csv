@@ -1,0 +1,2 @@
+horizon_hours,hour_level_observations,mean_hour_level_mae_improvement,bootstrap_block_hours,bootstrap_replicates,bootstrap_ci_95_low,bootstrap_ci_95_high,dm_hac_lag_hours,dm_statistic,dm_two_sided_p_value
+6,8754,10.497323673498988,168,2000,7.890015668352949,12.989473250425883,24,13.177878329734792,1.1765321320468066e-39

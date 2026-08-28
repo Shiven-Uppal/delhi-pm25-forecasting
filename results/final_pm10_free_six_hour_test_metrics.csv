@@ -1,0 +1,2 @@
+horizon_hours,final_model,test_records,mae,rmse,r2,bias,persistence_mae,mae_improvement,mae_improvement_pct
+6,PM10-free histogram gradient boosting,251065,32.046935208215054,55.3393625918156,0.6538982941171556,-5.476485858755899,42.758256593578025,10.711321385362972,25.05088429393946

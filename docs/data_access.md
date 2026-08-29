@@ -7,7 +7,7 @@ They are public-source records and may be large.
 This repository contains the code, derived outputs and figures needed to inspect the analysis workflow.
 
 ## Variables used
-The raw archive included hourly-aggregated PM2.5 as the forecasting target, together with available pollutant concentrations, meteorological variables, timestamps and station identifiers.
+The raw archive included fifteen-minute PM2.5 measurements, which were aggregated to hourly values for forecasting, together with available pollutant concentrations, meteorological variables, timestamps and station identifiers.
 
 ## Processing workflow
 1. Obtain the public fifteen-minute station records for 2024-2025.

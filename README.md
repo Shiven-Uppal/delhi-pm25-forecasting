@@ -6,7 +6,7 @@ This repository contains the analysis code, derived results and figures for a st
 - Hourly aggregation and documented quality-control rules
 - Chronological training, validation and future-year test periods
 - Benchmark comparison with persistence, seasonal persistence, Ridge regression and histogram gradient boosting
-- Robustness checks using prediction-interval coverage, blocked bootstrap inference, station-held-out transfer and grouped permutation importance
+- Robustness checks using blocked bootstrap inference, station-held-out transfer and grouped permutation importance
 
 ## Main result
 The final PM10-free six-hour histogram-gradient-boosting model achieved an MAE of 32.05 micrograms per cubic metre on the 2025 test period, representing a 25.1% lower MAE than persistence.

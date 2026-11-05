@@ -2,17 +2,17 @@
 
 ## Setup
 
-Install the required Python packages:
+Use Python 3.10 or later, then install the declared package requirements:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-The public raw Delhi monitoring records are not included in this repository. See [data_access.md](data_access.md) for the data description.
+Download the 2024-2025 public archive described in [data_access.md](data_access.md). Raw observations are intentionally not committed to this repository.
 
-To rerun the workflow, obtain the same 2024-2025 public archive and update the input and output folder paths at the top of the Python scripts to match your computer.
+Before running any scripts, update their local input and output paths to match your computer. In particular, `build_hourly_pm25_panel.py` expects the raw input directory and writes an hourly-panel directory; later scripts expect the resulting feature file in the working directory.
 
-## Analysis order
+## Workflow
 
 Run the scripts in this order:
 
@@ -29,8 +29,10 @@ Run the scripts in this order:
 11. `create_final_paper_figures.py`
 12. `create_residual_diagnostics_figure.py`
 
-## Included outputs
+## Outputs
 
-The numerical results reported in the paper are in `results/`. Report figures are in `figures/`.
+The committed outputs under [`results/`](../results/README.md) and [`figures/`](../figures/) correspond to the paper. Fresh runs write several CSV and PNG outputs to the working directory; compare them with the committed outputs, then move them into an output directory if desired.
 
-Exact reruns require access to the same public raw-data archive and local path settings.
+## Environment note
+
+`requirements.txt` specifies compatible minimum versions. For a byte-for-byte historical reproduction, use a frozen environment exported from the original run as well as the same source archive.

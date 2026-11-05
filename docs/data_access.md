@@ -27,6 +27,10 @@ The archived files may additionally contain co-pollutants and local meteorologic
 - Valid high-pollution events are not removed as outliers.
 - Predictor imputation and scaling are fitted on the training partition only in the modelling scripts.
 
+## Core-station cohort
+
+The 31-station core cohort was defined before model fitting by applying the stated 10% hourly-PM2.5 missingness threshold across the complete 2024-2025 study archive. This uses 2025 **availability** only to define the fixed study cohort; no 2025 forecast errors, target outcomes, hyperparameters, or model-selection results were used to choose the model. Readers should distinguish this cohort-definition step from the chronologically untouched 2025 performance evaluation.
+
 ## Exact reproducibility note
 
 Public archives can be amended after publication. For an exact reproduction of the reported figures, retain a local copy of the 2024-2025 source files used for the study and record its retrieval date and file checksums. The committed derived results in [`results/`](../results/README.md) are the numerical outputs reported in the paper.

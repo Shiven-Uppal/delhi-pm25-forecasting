@@ -1,25 +1,32 @@
 # Data access and reproducibility
 
-## Raw monitoring data
-The analysis used publicly archived fifteen-minute air-quality observations from Delhi monitoring stations between 1 January 2024 and 31 December 2025.
-The raw records are not redistributed in this repository. 
-They are public-source records and may be large. 
-This repository contains the code, derived outputs and figures needed to inspect the analysis workflow.
+## Source archive
 
-## Variables used
-The raw archive included fifteen-minute PM2.5 measurements, which were aggregated to hourly values for forecasting, together with available pollutant concentrations, meteorological variables, timestamps and station identifiers.
+The analysis used publicly archived fifteen-minute Delhi monitoring observations from **1 January 2024 to 31 December 2025**. The report cites the OpenCity Delhi air-quality archive:
 
-## Processing workflow
-1. Obtain the public fifteen-minute station records for 2024-2025.
-2. Place the downloaded files in a local raw-data directory.
-3. Update the input and output path variables at the top of each script to match local file locations.
-4. Run the scripts in the order described in the repository README.
+<https://data.opencity.in/dataset/delhi-hourly-air-quality-reports>
 
-## Data handling
-Only derived, non-raw outputs are included in `results/`. 
-The analysis did not delete valid high-pollution observations as outliers. 
-Hourly PM2.5 was retained only when the required underlying fifteen-minute observations were available, as documented in the analysis code and report.
+The raw records are not redistributed in this repository. Download the same 2024-2025 archive before attempting an exact rerun, and retain the files unchanged in a local raw-data directory.
 
-## Scope
-The repository supports reproducibility of a predictive forecasting analysis. 
-It does not provide a city-wide pollution map, emissions inventory, physical dispersion model or causal attribution analysis.
+## Expected content
+
+The processing scripts expect station-level CSV files containing, at minimum:
+
+- `Timestamp`
+- `Station ID`
+- `Station Name`
+- `PM2.5 (µg/m³)`
+
+The archived files may additionally contain co-pollutants and local meteorological measurements. These are used when available. The hourly aggregation script currently identifies raw files whose names contain `15_minute`.
+
+## Processing rules
+
+- Timestamps are parsed as UTC and assigned to their enclosing clock hour.
+- PM2.5 is retained for an hour only when at least three quarter-hour readings are present.
+- Other numeric variables are aggregated as hourly means, while their quarter-hour observation counts are retained.
+- Valid high-pollution events are not removed as outliers.
+- Predictor imputation and scaling are fitted on the training partition only in the modelling scripts.
+
+## Exact reproducibility note
+
+Public archives can be amended after publication. For an exact reproduction of the reported figures, retain a local copy of the 2024-2025 source files used for the study and record its retrieval date and file checksums. The committed derived results in [`results/`](../results/README.md) are the numerical outputs reported in the paper.

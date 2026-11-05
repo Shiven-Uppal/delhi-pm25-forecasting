@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Time-Aware Multi-Station Forecasting of Hourly PM2.5 Across 31 Delhi Monitoring Stations"
+type: software
+authors:
+  - family-names: Uppal
+    given-names: Shiven
+date-released: 2026-09-28
+version: 1.0.0
+repository-code: "https://github.com/Shiven-Uppal/delhi-pm25-forecasting"
+license: MIT
